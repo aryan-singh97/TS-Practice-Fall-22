@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Component } from "react";
+import "./styles.css";
 
 interface Props {
   todo: string;
@@ -18,11 +18,12 @@ const InputField: React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
       }}
     >
       <input
-        type="input"
+        type="text"
+        placeholder="Enter a Task"
         value={todo}
+        ref={inputRef}
         onChange={(e) => setTodo(e.target.value)}
-        placeholder="Enter some text"
-        className="input_box"
+        className="input__box"
       />
       <button className="input_submit" type="submit">
         Go

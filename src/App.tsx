@@ -1,8 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import InputField from "./Components/InputField";
 import { Todo } from "./Components/model";
-import UseContextComponent from "./TypeScript Cheats/UseContextComponent";
+import TodoList from "./Components/TodoList";
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
@@ -22,6 +22,10 @@ const App: React.FC = () => {
     <div className="App">
       <h1 className="heading">Taskify</h1>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+      {/* {todos.map((t) => (
+        <li>{t.todo}</li>
+      ))} */}
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };
